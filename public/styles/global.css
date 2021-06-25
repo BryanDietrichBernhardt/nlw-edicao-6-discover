@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+} /*Fazer um reset nos estilos padrão*/
+
+html {
+  --black: #0D114F;
+  --white: #FAFAFA;
+  --red: #E83F5B;
+  --light-blue: #E0ECFF;
+  --blue: #3485FF;
+  --background: #FBFCFF;
+  --overlay: #040911;
+  --icons-details: #A5B0C1;
+
+  --grey-dark: #4D5E77;
+  --grey-blue: #A1B2CD;
+  --grey-medium: #D3D9E2;
+  --grey-light: #E5EAF1;
+  --grey-medium: #eaecf2;
+
+  /*1rem = 16px (User Agent) = 100% (user Agent)*/
+  font-size: 62.5%; /*10px*/
+}
+
+body {
+  display: flex;
+  height: 100vh; /*vh = altura da tela*/
+  /*width: 100vw; /*vw = largura da tela*/
+  background: var(--background);
+}
+
+body, button input, textarea {
+  /* intervalo de tamanho (mínimo, padrão, máximo)*/
+  font-size: clamp(14px, 1.6rem, 2vw);
+  font-family: 'Open Sans', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
+}
+
+.content {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.sr-only {
+  position: absolute; /*Elemento para de respeitar os outros, fica por cima de tudo*/
+  height: 1px; /*Código fica com 1px de tamanho*/
+  width: 1px; /*Código fica com 1px de tamanho*/
+  padding: 0; /*Remove o padding*/
+  margin: -1px; /*Move 1px para cima (fora da tela)*/
+  overflow: hidden; /*Para não ter barra de rolagem*/
+  clip-path: rect(0,0,0,0); /*Posiciona para o 0 da tela => Γ */
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* input and buttons */
+input, button, .button {
+  border-radius: .8rem;
+  height: 5rem;
+}
+
+button, .button {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  line-height: 0; /* Espeçamento entre as linhas do texto */
+
+  display: flex;
+  align-items: center; /* Alinha verticalmente */
+  justify-content: center; /* Alinha na horizontal */
+
+  background: var(--blue);
+  color: var(--white);
+
+  transition: filter .2s; /* Muda de estado mais suave 0.2s */
+
+  cursor: pointer; /* Mãozinha quando passar mouse em cima */
+}
+
+button:hover, .button:hover {
+  filter: brightness(1.2); /* Aplica um brilho */
+}
+
+button > img,
+.button > img {
+  margin-right: 1rem; /* Espaço entre imagem e texto do botão */
+  width: 2rem;
+}
+
+button.outlined,
+.button.outlined {
+  background: var(--white);
+  color: var(--blue);
+  border: .2rem solid var(--blue);
+}
+
+button.red,
+.button.red{
+  background: var(--red);
+  color: var(--white);
+}
+
+button.grey,
+.button.grey{
+  background: var(--grey-light);
+  color: var(--grey-dark);
+}
+
+
+/* Header */
+
+.content header {
+  width: 80%;
+  margin: 3.5rem auto;
+}
+
+.content header img {
+  width: 16.7rem;
+}
